@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Une application the_gossip_project qui affiche quelques pages statiques, un système de landing pages personnalisées, un index et un show de potins. Le tout avec Bootstrap et un header qui a les bons liens.
 
-Things you may want to cover:
+Ruby version 2.7.1
 
-* Ruby version
+Exercice THP validant : Créer une base de données pour une application de "Gossip".
 
-* System dependencies
+Pour démarrer le programme :
 
-* Configuration
+bundle install
 
-* Database creation
+rails db:seed
 
-* Database initialization
+rails s
 
-* How to run the test suite
+Dans votre navigateur, allez à localhost/3000/index
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
