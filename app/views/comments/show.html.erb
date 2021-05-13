@@ -1,0 +1,15 @@
+
+<div class="container">
+  <div class ='text-center'>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= @comment.user.first_name %></h5>
+        <p class="card-title"> <%= @comment.content %></p>
+        <% if is_owner?(@comment.user.id) %> 
+          <%= link_to 'Editer ce commentaire', edit_gossip_comment_path(:gossip_id => Gossip.find(params[:gossip_id]), :id => Comment.find(params[:id])), class: 'btn btn-outline-danger btn-sm' %>
+        <% end %> 
+        <%= link_to 'Revenir en arrière', gossip_path(:id => Gossip.find(params[:gossip_id])), class: 'btn btn-outline-secondary btn-sm' %>
+      </div>
+    </div>
+  </div>
+</div>

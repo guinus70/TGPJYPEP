@@ -1,0 +1,2 @@
+class Tagossip < ApplicationRecord
+end

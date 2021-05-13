@@ -1,0 +1,24 @@
+<div class="container">
+  <div class ='text-center'>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= @city.name %></h5>
+        <p class="card-title"> <%= @city.zip_code %></p>
+        <p class="card-title">FRANCE</p>
+      </div>
+    </div>
+  </div>
+
+  <div class ='align-middle text-center' style="padding-top:50px">
+    <h6 class="withborder">Voici la liste des <strong>gossips</strong> écris dans la ville de <%= @city.name %> :</h6>
+        <% @gossips.each do |gossip| %>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="mt-0 text-center"><%= gossip.title  %></h5>
+              <p class="card-text text-center"> <%= gossip.content %></p>
+              <%= link_to "Afficher ce gossip seul", gossip_path(:id => gossip.id), class: 'btn btn-outline-danger btn-sm' %>
+            </div>
+          </div>
+      <% end %>
+  </div>
+</div>

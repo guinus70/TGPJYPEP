@@ -1,0 +1,39 @@
+<h1 class="text-center new" style="margin: 25px 0">Inscris toi et partage enfin tes meilleurs potins !</h1>
+<div class="container text-center">
+  <form action= <%= users_path %> method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class="form-group">
+      <label for="Title">Ton prénom:</label>
+      <input type="text" class="form-control"  aria-describedby="authorHelp" placeholder="Entre ici ton prénom" name='first_name'>
+    </div>
+    <div class="form-group">
+      <label for="name">Ton nom:</label>
+      <input type="text" class="form-control"  aria-describedby="authorHelp" placeholder="Entre ici ton nom" name='last_name'>
+    </div>
+    <div class="form-group">
+      <label for="age">Ton âge:</label>
+      <input type="text" class="form-control"  aria-describedby="authorHelp" placeholder="Entre ici ton âge" name='age'>
+    </div>
+    <div class="form-group">
+      <label for="Description">Ta description:</label>
+      <input type="text" class="form-control"  aria-describedby="authorHelp" placeholder="Entre ici ta description" name='description'>
+    </div>
+    <div class="form-group">
+      <label for="Email">Ton email:</label>
+      <input type="text" class="form-control"  aria-describedby="authorHelp" placeholder="Entre ici ton email" name='email'>
+    </div>
+    <div class="form-group">
+      <label for="Email">Ta ville:</label>
+      <%= select_tag "city_id", options_from_collection_for_select(@city, "id","name"), class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label for="pasword">Ton mot de passe:</label>
+      <input type="password" class="form-control"  aria-describedby="authorHelp" placeholder="Entre ici ton mot de passe" name='password'>
+    </div>
+    <div class="form-group">
+      <label for="password">Confirme ton mot de passe:</label>
+      <input type="password" class="form-control"  aria-describedby="authorHelp" placeholder="Entre ici la confirmation de ton mot de passe" name='password_confirmation'>
+    </div>
+    <button type="submit" class="btn btn-danger align-center">Valider</button>
+  </form>
+</div>

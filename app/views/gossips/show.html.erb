@@ -1,0 +1,36 @@
+<div class ='align-middle text-center'>
+  <div class="card mt-6 ml-6 mr-6" style="height:280px">
+    <div class="card-body">
+      <h5 class="card-title"><%= @gossip.title %></h5>
+      <p class="card-text"><%= @gossip.content %></p>
+      <p class="card-title"><%= link_to "#{(@gossip.user.first_name)+ " " +(@gossip.user.last_name)}" , user_path(:id => @gossip.user.id)%></p>
+      <p class="card-text"><%= link_to @gossip.user.city.name, city_path(:id => @gossip.user.city.id) %></p>
+      <p class="card-title"><%= @gossip.created_at.strftime("%d/%m/%Y") %></p>
+      <%# <% if is_owner?(@gossip.user.id) %>
+        <%= link_to "Editer ce gossip", edit_gossip_path(:id => @gossip.id), class: 'btn btn-outline-danger btn-sm' %> 
+        <%= link_to "Supprimer ce gossip", @gossip, method: :delete, data: {confirm: "Voulez-vous vraiment supprimer ce gossip ?"} , class: 'btn btn-danger btn-sm' %>
+      <%# <% end %> 
+    </div>
+  </div>
+</div>
+
+<div class="text-center" style="padding: 50px 0">
+  <%= link_to "Commenter ce gossip", new_gossip_comment_path(:gossip_id => @gossip.id ), class: 'btn btn-outline-danger btn-sm' %>
+</div>
+
+<div class="col-12 text-center">
+  <% @comments.each do |comment| %>
+    <% if comment.gossip_id == @gossip.id %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="mt-0 text-center"><%= comment.content  %></h5>
+          <p class="card-text text-center"> Un commentaire de : <%= link_to comment.user.first_name , user_path(:id => comment.user.id)%></p>
+          <%= link_to "Afficher ce commentaire", gossip_comment_path(:id => comment.id, :gossip_id => @gossip.id), class: 'btn btn-outline-secondary btn-sm' %>
+          <% if is_owner?(comment.user.id) %> 
+            <%= link_to 'Editer ce commentaire', edit_gossip_comment_path(:id => comment.id, :gossip_id => @gossip.id), class: 'btn btn-outline-danger btn-sm' %> 
+          <% end %> 
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

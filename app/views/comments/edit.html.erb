@@ -1,0 +1,17 @@
+
+<h1 class="text-center new">Edit ce commentaire !</h1>
+<p class="text-center new">Balance ton nouveau commentaire via le formulaire ci-dessous</p>
+<div class="container text-center">
+  <form action= <%= gossip_comment_path %> method="POST">
+    <input type="hidden" name="_method" value="patch" />
+    <div class="form-group">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    </div>
+    <div class="form-group">
+      <label for="content">Saisis ici le nouveau contenu de ton commentaire:</label>
+      <textarea class="form-control" rows="3" placeholder="Entrez ici le contenu de votre commentaire" name='content'></textarea> 
+    </div>
+    <button type="submit" class="btn btn-danger align-center" style="margin: 20px">Valider</button>
+  </form>
+  <%= button_to 'Supprimer ce commentaire', gossip_comment_path(@comment), method: 'delete', data: { confirm: 'Voulez-vous vraiment supprimer ce commentaire ?' }  , class: 'btn btn-danger' %>
+</div>

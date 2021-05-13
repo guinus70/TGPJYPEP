@@ -1,0 +1,87 @@
+<main>
+
+  <div class="container-fluid mb-5">
+
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-12">
+
+        <div class="card pb-5" style="top :85px">
+          <div class="card-body">
+
+            <div class="container">
+
+              <!--Section: Contact v.2-->
+              <section class="section">
+
+                <!--Section heading-->
+                <h2 class="font-weight-bold text-center h1 my-5">Contactez-nous</h2>
+                <!--Section description-->
+                <p class="text-center grey-text mb-5 mx-auto w-responsive">Notre équipe se fera un plaisir de vous répondre</p>
+
+                <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-xl-12 text-center">
+                    <form>
+
+                      <!--Grid row-->
+                      <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                          <div class="lg-form">
+                            <input type="text" id="contact-name" placeholder="Votre nom" class="form-control align-center">
+                            <label for="contact-name" class="">Votre nom</label>
+                          </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                          <div class="md-form">
+                            <input type="text" id="contact-email" placeholder="Votre email" class="form-control align-center">
+                            <label for="contact-email" class="">Votre email</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!--Grid row-->
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="md-form">
+                            <input type="text" id="contact-Subject" placeholder="A propos" class="form-control">
+                            <label for="contact-Subject" class="">Sujet</label>
+                          </div>
+                        </div>
+                      </div>
+                      <!--Grid row-->
+
+                      <!--Grid row-->
+                      <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+
+                          <div class="md-form">
+                            <textarea type="text" id="contact-message" placeholder="Votre message" class="md-textarea form-control" rows="3"></textarea>
+                            <label for="contact-message">Votre message</label>
+                          </div>
+                        </div>
+                      </div>
+                      <!--Grid row-->
+                      <%= link_to "Envoyer", index_path, class: "btn btn-danger"%>
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!--Main Layout-->

@@ -1,0 +1,15 @@
+
+<h1 class="text-center new">Crée un commentaire !</h1>
+<p class="text-center new">Balance ton commentaire via le formulaire ci-dessous</p>
+<div class="container text-center">
+  <form action= <%= gossip_comments_path %> method="POST">
+    <div class="form-group">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    </div>
+    <div class="form-group">
+      <label for="Content">Saisis ici le contenu de ton commentaire:</label>
+      <textarea class="form-control" rows="3" placeholder="Entrez ici le contenu de votre commentaire" name='content'></textarea> 
+    </div>
+    <button type="submit" class="btn btn-danger align-center">Valider</button>
+  </form>
+</div>

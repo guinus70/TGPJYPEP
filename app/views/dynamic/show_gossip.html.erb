@@ -1,0 +1,16 @@
+<h1 class="d-flex justify-content-center m-3">Bienvenue dans le détail !</h1> 
+
+
+    <div class="card text-center">
+        <div class="card-header">
+            Voici le potin
+        </div>
+        <div class="card-body">
+        <h5><%= params[:gossip].title %></h5>
+        <p class="card-text"><%= params[:gossip].content %></p>
+        <%=link_to "Les infos sur l'auteur sont ici (clique sur moiiiiiiii)", show_user_path(:id => params[:gossip].user.id), :class => "card-text" %>
+        </div>
+    <div class="card-footer text-muted">
+    <%= params[:gossip].created_at %>
+    </div>
+    </div>
